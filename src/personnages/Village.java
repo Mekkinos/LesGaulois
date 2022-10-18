@@ -20,9 +20,13 @@ public class Village {
 	public String getNom() {
 		return nom;
 }
-	public Gaulois trouverHabitant(int nbVillageois) {
+	
+	public Gaulois ajouterHabitant(int nbVillageois) {
 		return villageois[nbVillageois];
 	}
-	 main
+	
+	public static void main(String[] args) {
+		
+	}
 	
 }
