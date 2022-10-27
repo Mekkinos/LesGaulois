@@ -38,17 +38,17 @@ public class Romain {
 	private void donner(Equipement equipement,int position) {
 		equipements[position] = equipement;
 		nbEquipement ++;
-		System.out.println("Le soldat " + nom + " s'equipe d'un " + equipement + " .");
+		System.out.println("Le soldat " + nom + " s'équipe avec un " + equipement + " .");
 	}
 	
 	public void sEquiper(Equipement equipement) {
 		switch (nbEquipement) {
 		case 2 :
-			System.out.println("Le soldat " + nom + " est deja bien proteege !");
+			System.out.println("Le soldat " + nom + " est déjà bien protégé !");
 			break;
 		case 1 :
 			if ((equipements[0] == equipement) || (equipements[1] == equipement)) {
-				System.out.println("Le soldat " + nom + " possede deja un " + equipement + " .");
+				System.out.println("Le soldat " + nom + " possède déja un " + equipement + " .");
 			}
 			else {
 				if (equipements[0] == null) donner(equipement,0);
@@ -61,6 +61,16 @@ public class Romain {
 		}
 	}
 	
-	
+	public static void main(String[] args) {
+		Romain romain = new Romain("Romain",6);
+		romain.parler("Je m'apelle ROMAIN");
+		romain.recevoirCoup(1);
+		System.out.println(Equipement.CASQUE);
+		System.out.println(Equipement.BOUCLIER);
+		romain.sEquiper(Equipement.CASQUE);
+		romain.sEquiper(Equipement.CASQUE);
+		romain.sEquiper(Equipement.BOUCLIER);
+		romain.sEquiper(Equipement.CASQUE);
+	}
 	
 }
